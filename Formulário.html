@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indique um Amigo - IST Internet</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fundo e estilo global */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0353c9 0%, #015ade 100%);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* Painel principal */
+    .container {
+      background: #ffffff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    /* Estilização da logo */
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      max-width: 100%;
+      height: auto;
+      max-height: 250px;
+    }
+
+    /* Título do painel */
+    h1 {
+      color: #343f51;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    /* Estilização do formulário */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      font-size: 1em;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input[type="tel"]:invalid {
+      border-color: red;
+    }
+
+    /* Botão estilizado */
+    button {
+      padding: 10px;
+      background: #343f51;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo no topo -->
+    <div class="logo-container">
+      <img src="https://cdn.discordapp.com/attachments/1315677822664052776/1315677986363539527/LOGO_IST_VETORIZADA_VERTICAL.png?ex=6758481c&is=6756f69c&hm=9a5c75e938f7dea4074a44096b6503190ba030129f307d475081154b4e8b50ee&" alt="Logo IST Internet" />
+    </div>
+
+    <h1>Indique um Amigo e Ganhe a Mensalidade Grátis!</h1>
+    <form action="https://seudominio.com/api/processar_indicacao" method="POST">
+      <label for="nome_cliente">Seu Nome:</label>
+      <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Digite seu nome" required />
+
+      <label for="email_cliente">Seu Email:</label>
+      <input type="email" id="email_cliente" name="email_cliente" placeholder="Digite seu email" required />
+
+      <label for="celular_amigo">Número do Celular do Amigo Indicado  <br>Exemplo: (99) 9 9999-9999:</label>
+      <input
+        type="tel"
+        id="celular_amigo"
+        name="celular_amigo"
+        placeholder="(99) 9 9999-9999"
+        pattern="^\(\d{2}\)\s9\d{4}-\d{4}$"
+        title="Digite o número no formato correto: (99) 9 9999-9999"
+        required
+      />
+
+      <button type="submit">Enviar Indicação</button>
+    </form>
+  </div>
+</body>
+
+</html>
